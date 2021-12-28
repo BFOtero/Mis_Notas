@@ -1,0 +1,55 @@
+.load__contenedor { 
+    background-color: $primary;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    
+    transition:all 1.5s;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.load__loader,
+.load__loader:before,
+.load__loader:after { 
+    border-radius: 50px;
+    width: 2.5em;
+    height: 2.5em;
+    animation: Loader 1.5s infinite ease-in-out;
+}
+
+.load__loader{
+    color:$dark-grey;
+    font-size: 15px;
+    position: relative;
+    animation-delay: -0.16s;
+}
+
+.load__loader:before,
+.load__loader:after{
+    content: '';
+    position: absolute;
+    top: 0;
+}
+
+.load__loader:before{
+    left: -3.5em;
+    animation-delay: -0.32s;
+}
+
+.load__loader:after{
+    left: 3.5em;
+}
+
+@keyframes Loader {
+    0%, 
+    80%,
+    100% {
+        box-shadow: 0 2.5em 0 -1.3em;
+    }
+    40% { 
+        box-shadow: 0 2.5em 0 0;
+    }
+}
